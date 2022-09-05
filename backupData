@@ -1,0 +1,13 @@
+  text = getColorName(b,g,r) + '   R=' + str(r) + ' G=' + str(g) + ' B=' + str(b)
+    cv2.putText(frame,text, (30,30),2, 0.8, (255,255,255),2,cv2.LINE_AA)
+    
+    if(r+g+b >= 600):
+        cv2.putText(frame,text,(50,50), 2, 0.8, (0,0,0),2,cv2.LINE_AA)   
+        
+    cv2.imshow('Deteccion_color_tiempo_real',frame)
+    
+    if cv2.waitKey(20) & 0xFF == 27:
+        break
+    
+camera.release()
+cv2.destroyAllWindows()
